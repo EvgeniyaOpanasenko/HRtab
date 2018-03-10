@@ -6,11 +6,11 @@ import java.util.List;
 
 public interface EmployeeService {
 
-    void findById(Long id);
+    Employee findById(Long id);
 
     List<Employee> findAll();
 
-    void save(Employee employee);
+    Employee save(Employee employee);
 
     // can assign the employee to some department
     void update(Employee employee);

@@ -28,8 +28,8 @@ public class DepartmentServiceImplTest {
         Department department = new Department("testDepartment");
         departmentRepository.save(department);
 
-        Optional<Department> result = departmentRepository.findById(department.getId());
-        assertEquals("testDepartment", result.get().getName());
+        Department result = departmentRepository.findOne(department.getId());
+        assertEquals("testDepartment", result.getName());
     }
 
     @Test
@@ -48,7 +48,7 @@ public class DepartmentServiceImplTest {
     public void save_department_test() {
         Department department = new Department("testDepartment");
         departmentRepository.save(department);
-        Assert.assertNotNull(departmentRepository.findById(department.getId()));
+        Assert.assertNotNull(departmentRepository.findOne(department.getId()));
     }
 
     @Test
@@ -56,7 +56,7 @@ public class DepartmentServiceImplTest {
         Department deleted = new Department("testDepartment");
         departmentRepository.save(deleted);
 
-        Optional<Department> client = departmentRepository.findById(deleted.getId());
-        assertEquals("testDepartment", client.get().getName());
+        Department client = departmentRepository.findOne(deleted.getId());
+        assertEquals("testDepartment", client.getName());
     }
 }

@@ -5,6 +5,7 @@ import com.example.EmployeeTab.model.enums.Gender;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Date;
+import java.util.Objects;
 
 @Entity
 @Table(name = "EMPLOYEES")
@@ -29,20 +30,16 @@ public class Employee implements Serializable {
     private Long taxNumber;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "department_id", nullable = false)
+    @JoinColumn(name = "department_id")
     private Department department;
 
     public Employee() {
     }
 
-    public Employee(String firstName, Department department) {
+    public Employee(Long id, String firstName, String lastName) {
+        this.id = id;
         this.firstName = firstName;
-        this.department = department;
-    }
-
-    public Employee(String firstName) {
-        this.firstName = firstName;
-
+        this.lastName = lastName;
     }
 
     public Long getId() {
@@ -99,5 +96,34 @@ public class Employee implements Serializable {
 
     public void setDepartment(Department department) {
         this.department = department;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return Objects.equals(id, employee.id) &&
+                Objects.equals(firstName, employee.firstName) &&
+                Objects.equals(lastName, employee.lastName);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(id, firstName, lastName);
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", birthday=" + birthday +
+                ", gender=" + gender +
+                ", taxNumber=" + taxNumber +
+                ", department=" + department +
+                '}';
     }
 }

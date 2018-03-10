@@ -16,8 +16,8 @@ public class EmployeeServiceImpl implements EmployeeService {
     private EmployeeRepository employeeRepository;
 
     @Override
-    public void findById(Long id) {
-         employeeRepository.findById(id);
+    public Employee findById(Long id) {
+        return employeeRepository.findOne(id);
     }
 
     @Override
@@ -26,9 +26,10 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public void save(Employee employee) {
-        employeeRepository.save(employee);
+    public Employee save(Employee employee) {
+        return null;
     }
+
 
     @Override
     public void update(Employee employee) {
