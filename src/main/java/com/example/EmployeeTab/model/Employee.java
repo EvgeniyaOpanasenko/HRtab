@@ -8,7 +8,7 @@ import java.sql.Date;
 
 @Entity
 @Table(name = "EMPLOYEES")
-public class Employee implements Serializable{
+public class Employee implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

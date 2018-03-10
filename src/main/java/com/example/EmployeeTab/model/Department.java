@@ -7,7 +7,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "DEPARTMENTS")
-public class Department implements Serializable{
+public class Department implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
