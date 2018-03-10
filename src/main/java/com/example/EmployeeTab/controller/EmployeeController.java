@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
+@RequestMapping("/SpringBootCRUDApp/api")
 public class EmployeeController {
     public static final Logger logger = LoggerFactory.getLogger(EmployeeController.class);
 
@@ -23,7 +24,7 @@ public class EmployeeController {
     private EmployeeService employeeService;
 
     @RequestMapping(value = "/employees", method = RequestMethod.GET)
-    public ResponseEntity<List<Employee>> listAllUsers() {
+    public ResponseEntity<List<Employee>> listAllEmployees() {
         List<Employee> employees = employeeService.findAll();
         if (employees.isEmpty()) {
             return new ResponseEntity(HttpStatus.NO_CONTENT);
