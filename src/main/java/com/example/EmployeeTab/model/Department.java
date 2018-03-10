@@ -3,6 +3,7 @@ package com.example.EmployeeTab.model;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 @Entity
@@ -21,6 +22,15 @@ public class Department implements Serializable {
     private Set<Employee> employees = new HashSet<>();
 
     public Department() {
+    }
+
+    public Department(String name) {
+        this.name = name;
+    }
+
+    public Department(String name, Employee employees) {
+        this.name = name;
+        this.employees.add(employees);
     }
 
     public Long getId() {
@@ -45,5 +55,21 @@ public class Department implements Serializable {
 
     public void setEmployees(Set<Employee> employees) {
         this.employees = employees;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Department that = (Department) o;
+        return Objects.equals(id, that.id) &&
+                Objects.equals(name, that.name) &&
+                Objects.equals(employees, that.employees);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(id, name, employees);
     }
 }
