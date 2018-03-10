@@ -12,7 +12,11 @@
 	                    <div class="form-group col-md-12">
 	                        <label class="col-md-2 control-lable" for="uname">Name</label>
 	                        <div class="col-md-7">
-	                            <input type="text" ng-model="ctrl.employee.name" id="uname" class="employeename form-control input-sm" placeholder="Enter your name" required ng-minlength="3"/>
+	                            <input type="text" ng-model="ctrl.employee.name"
+									   d="uname"
+									   class="employeename form-control input-sm"
+									   placeholder="Enter your name"
+									   required ng-minlength="3"/>
 	                        </div>
 	                    </div>
 	                </div>
@@ -21,7 +25,10 @@
 	                    <div class="form-group col-md-12">
 	                        <label class="col-md-2 control-lable" for="age">Age</label>
 	                        <div class="col-md-7">
-	                            <input type="text" ng-model="ctrl.employee.age" id="age" class="form-control input-sm" placeholder="Enter your Age." required ng-pattern="ctrl.onlyIntegers"/>
+	                            <input type="text" ng-model="ctrl.employee.age"
+									   id="age" class="form-control input-sm"
+									   placeholder="Enter your Age."
+									   required ng-pattern="ctrl.onlyIntegers"/>
 	                        </div>
 	                    </div>
 	                </div>
@@ -30,15 +37,19 @@
 	                    <div class="form-group col-md-12">
 	                        <label class="col-md-2 control-lable" for="salary">Salary</label>
 	                        <div class="col-md-7">
-	                            <input type="text" ng-model="ctrl.employee.salary" id="salary" class="form-control input-sm" placeholder="Enter your Salary." required ng-pattern="ctrl.onlyNumbers"/>
+	                            <input type="text" ng-model="ctrl.employee.salary" id="salary"
+									   class="form-control input-sm" placeholder="Enter your Salary."
+									   required ng-pattern="ctrl.onlyNumbers"/>
 	                        </div>
 	                    </div>
 	                </div>
 
 	                <div class="row">
 	                    <div class="form-actions floatRight">
-	                        <input type="submit"  value="{{!ctrl.employee.id ? 'Add' : 'Update'}}" class="btn btn-primary btn-sm" ng-disabled="myForm.$invalid || myForm.$pristine">
-	                        <button type="button" ng-click="ctrl.reset()" class="btn btn-warning btn-sm" ng-disabled="myForm.$pristine">Reset Form</button>
+	                        <input type="submit"  value="{{!ctrl.employee.id ? 'Add' : 'Update'}}"
+								   class="btn btn-primary btn-sm" ng-disabled="myForm.$invalid || myForm.$pristine">
+	                        <button type="button" ng-click="ctrl.reset()" class="btn btn-warning btn-sm"
+									ng-disabled="myForm.$pristine">Reset Form</button>
 	                    </div>
 	                </div>
 	            </form>
@@ -53,10 +64,13 @@
 		        <table class="table table-hover">
 		            <thead>
 		            <tr>
-		                <th>ID</th>
-		                <th>NAME</th>
-		                <th>AGE</th>
-		                <th>SALARY</th>
+		                <th>id</th>
+		                <th>firstName</th>
+		                <th>lastName</th>
+		                <th>birthday</th>
+		                <th>gender</th>
+		                <th>taxNumber</th>
+		                <th>department</th>
 		                <th width="100"></th>
 		                <th width="100"></th>
 		            </tr>
@@ -64,9 +78,12 @@
 		            <tbody>
 		            <tr ng-repeat="u in ctrl.getAllEmployees()">
 		                <td>{{u.id}}</td>
-		                <td>{{u.name}}</td>
-		                <td>{{u.age}}</td>
-		                <td>{{u.salary}}</td>
+		                <td>{{u.firstName}}</td>
+		                <td>{{u.lastName}}</td>
+		                <td>{{u.birthday}}</td>
+		                <td>{{u.gender}}</td>
+		                <td>{{u.taxNumber}}</td>
+		                <td>{{u.department}}</td>
 		                <td><button type="button" ng-click="ctrl.editEmployee(u.id)" class="btn btn-success custom-width">Edit</button></td>
 		                <td><button type="button" ng-click="ctrl.removeEmployee(u.id)" class="btn btn-danger custom-width">Remove</button></td>
 		            </tr>

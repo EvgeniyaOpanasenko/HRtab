@@ -1,7 +1,7 @@
 var app = angular.module('crudApp',['ui.router','ngStorage']);
 
 app.constant('urls', {
-    BASE: 'http://localhost:8080/SpringBootCRUDApp',
+    BASE: 'http://localhost:8080/SpringBootCRUDApp/api',
     EMPLOYEE_SERVICE_API : 'http://localhost:8080/SpringBootCRUDApp/api/employees/'
 });
 
