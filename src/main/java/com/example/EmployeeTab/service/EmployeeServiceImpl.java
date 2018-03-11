@@ -27,13 +27,13 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public Employee save(Employee employee) {
-        return null;
+        return employeeRepository.save(employee);
     }
 
 
     @Override
     public void update(Employee employee) {
-        employeeRepository.save(employee);
+        save(employee);
         //TODO check if one exist = > got it and assign new data
     }
 
@@ -42,4 +42,8 @@ public class EmployeeServiceImpl implements EmployeeService {
         employeeRepository.delete(employee);
     }
 
+    @Override
+    public boolean isEmployeeExist(Employee employee) {
+        return employeeRepository.findByTaxNumber(employee.getTaxNumber()) != null;
+    }
 }

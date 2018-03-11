@@ -17,4 +17,5 @@ public interface EmployeeService {
 
     void delete(Employee employee);
 
+    boolean isEmployeeExist(Employee employee);
 }
