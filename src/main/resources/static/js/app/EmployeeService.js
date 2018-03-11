@@ -40,7 +40,7 @@ angular.module('crudApp').factory('EmployeeService',
             function getEmployee(id) {
                 console.log('Fetching Employee with id :'+id);
                 var deferred = $q.defer();
-                $http.get(urls.EMPLOYEE_SERVICE_API + id)
+                $http.get(urls.EMPLOYEE_SERVICE_API_BASE + id)
                     .then(
                         function (response) {
                             console.log('Fetched successfully Employee with id :'+id);
@@ -57,7 +57,7 @@ angular.module('crudApp').factory('EmployeeService',
             function createEmployee(employee) {
                 console.log('Creating Employee');
                 var deferred = $q.defer();
-                $http.post(urls.EMPLOYEE_SERVICE_API_POST, employee)
+                $http.post(urls.EMPLOYEE_SERVICE_API_BASE, employee)
                     .then(
                         function (response) {
                             loadAllEmployees();
@@ -74,7 +74,7 @@ angular.module('crudApp').factory('EmployeeService',
             function updateEmployee(employee, id) {
                 console.log('Updating Employee with id '+id);
                 var deferred = $q.defer();
-                $http.put(urls.EMPLOYEE_SERVICE_API + id, employee)
+                $http.put(urls.EMPLOYEE_SERVICE_API_BASE + id, employee)
                     .then(
                         function (response) {
                             loadAllEmployees();
@@ -91,7 +91,7 @@ angular.module('crudApp').factory('EmployeeService',
             function removeEmployee(id) {
                 console.log('Removing Employee with id '+id);
                 var deferred = $q.defer();
-                $http.delete(urls.EMPLOYEE_SERVICE_API + id)
+                $http.delete(urls.EMPLOYEE_SERVICE_API_BASE + id)
                     .then(
                         function (response) {
                             loadAllEmployees();
