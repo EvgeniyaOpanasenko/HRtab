@@ -30,7 +30,7 @@ public class Employee implements Serializable {
     @Column(name = "tax_number"/*, unique = true*/)
     private Long taxNumber;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "department_id")
     //to prevent recursion when query works till StackOverflow
     @JsonBackReference

@@ -57,7 +57,7 @@ angular.module('crudApp').factory('EmployeeService',
             function createEmployee(employee) {
                 console.log('Creating Employee');
                 var deferred = $q.defer();
-                $http.post(urls.EMPLOYEE_SERVICE_API, employee)
+                $http.post(urls.EMPLOYEE_SERVICE_API_POST, employee)
                     .then(
                         function (response) {
                             loadAllEmployees();

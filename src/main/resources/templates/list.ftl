@@ -10,35 +10,70 @@
 	                <input type="hidden" ng-model="ctrl.employee.id" />
 	                <div class="row">
 	                    <div class="form-group col-md-12">
-	                        <label class="col-md-2 control-lable" for="uname">Name</label>
+	                        <label class="col-md-2 control-lable" for="firstName">firstName</label>
 	                        <div class="col-md-7">
-	                            <input type="text" ng-model="ctrl.employee.name"
-									   d="uname"
-									   class="employeename form-control input-sm"
-									   placeholder="Enter your name"
+	                            <input type="text" ng-model="ctrl.employee.firstName"
+									   d="firstName"
+									   class="username form-control input-sm"
+									   placeholder="Enter your first name"
 									   required ng-minlength="3"/>
 	                        </div>
 	                    </div>
 	                </div>
 
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label class="col-md-2 control-lable" for="lastName">lastName</label>
+                            <div class="col-md-7">
+                                <input type="text" ng-model="ctrl.employee.lastName"
+                                       d="lastName"
+                                       class="username form-control input-sm"
+                                       placeholder="Enter your lastName"
+                                       required ng-minlength="3"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="age">birthday</label>
+                        <div class="col-md-7">
+                            <input type="date" ng-model="ctrl.employee.birthday"
+                                   id="birthday" class="form-control input-sm"
+                                   placeholder="Enter your birthday. Example 2018-03-11"/>
+                        </div>
+                    </div>
+                </div>
+<#--TODO add drop down box add patern-->
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label class="col-md-2 control-lable" for="age">gender</label>
+                            <div class="col-md-7">
+                                <input type="text" ng-model="ctrl.employee.gender"
+                                       id="gender" class="form-control input-sm"
+                                       placeholder="Enter your gender. FEMALE or MALE"/>
+                            </div>
+                        </div>
+                    </div>
+
+	                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="age">taxNumber</label>
+                        <div class="col-md-7">
+                            <input type="taxNumber" ng-model="ctrl.employee.taxNumber"
+                                   id="age" class="form-control input-sm"
+                                   placeholder="Enter your taxNumber."
+                                   required ng-pattern="ctrl.onlyIntegers"/>
+                        </div>
+                    </div>
+                </div>
+	<#--TODO add dropBox for departments-->
 	                <div class="row">
 	                    <div class="form-group col-md-12">
-	                        <label class="col-md-2 control-lable" for="age">Age</label>
+	                        <label class="col-md-2 control-lable" for="department">gender</label>
 	                        <div class="col-md-7">
-	                            <input type="text" ng-model="ctrl.employee.age"
-									   id="age" class="form-control input-sm"
-									   placeholder="Enter your Age."
-									   required ng-pattern="ctrl.onlyIntegers"/>
-	                        </div>
-	                    </div>
-	                </div>
-	
-	                <div class="row">
-	                    <div class="form-group col-md-12">
-	                        <label class="col-md-2 control-lable" for="salary">Salary</label>
-	                        <div class="col-md-7">
-	                            <input type="text" ng-model="ctrl.employee.salary" id="salary"
-									   class="form-control input-sm" placeholder="Enter your Salary."
+	                            <input type="text" ng-model="ctrl.employee.department" id="department"
+									   class="form-control input-sm" placeholder="Enter your department. From 1-5"
 									   required ng-pattern="ctrl.onlyNumbers"/>
 	                        </div>
 	                    </div>

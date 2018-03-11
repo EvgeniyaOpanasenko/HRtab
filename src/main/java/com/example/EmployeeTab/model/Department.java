@@ -18,7 +18,7 @@ public class Department implements Serializable {
 
     private String name;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "department")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "department")
     //to prevent recursion when query works till StackOverflow
     @JsonManagedReference
     private Set<Employee> employees = new HashSet<>();
