@@ -1,5 +1,7 @@
 package com.example.EmployeeTab.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.HashSet;
@@ -16,9 +18,9 @@ public class Department implements Serializable {
 
     private String name;
 
-    @OneToMany(cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY,
-            mappedBy = "department")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "department")
+    //to prevent recursion when query works till StackOverflow
+    @JsonManagedReference
     private Set<Employee> employees = new HashSet<>();
 
     public Department() {

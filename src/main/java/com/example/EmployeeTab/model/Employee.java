@@ -1,6 +1,7 @@
 package com.example.EmployeeTab.model;
 
 import com.example.EmployeeTab.model.enums.Gender;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -26,11 +27,13 @@ public class Employee implements Serializable {
     @Enumerated(EnumType.STRING)
     private Gender gender;
 
-    @Column(name = "tax_number", unique = true)
+    @Column(name = "tax_number"/*, unique = true*/)
     private Long taxNumber;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "department_id")
+    //to prevent recursion when query works till StackOverflow
+    @JsonBackReference
     private Department department;
 
     public Employee() {
