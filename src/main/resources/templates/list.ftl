@@ -43,7 +43,7 @@
                         </div>
                     </div>
                 </div>
-<#--TODO add drop down box add patern-->
+
                     <div class="row">
                         <div class="form-group col-md-12">
                             <label class="col-md-2 control-lable" for="gender">gender</label>
@@ -64,7 +64,7 @@
                         <div class="col-md-7">
                             <input type="number" ng-model="ctrl.employee.taxNumber"
                                    id="taxNumber" class="form-control input-sm"
-                                   placeholder="Enter your taxNumber."
+                                   placeholder="Enter your taxNumber"
                                    required ng-pattern="ctrl.onlyNumbers"/>
                         </div>
                     </div>
