@@ -39,8 +39,7 @@
                         <label class="col-md-2 control-lable" for="age">birthday</label>
                         <div class="col-md-7">
                             <input type="date" ng-model="ctrl.employee.birthday"
-                                   id="birthday" class="form-control input-sm"
-                                   placeholder="Enter your birthday. Example 2018-03-11"/>
+                                   id="birthday" class="form-control input-sm"/>
                         </div>
                     </div>
                 </div>
@@ -60,29 +59,30 @@
                     <div class="form-group col-md-12">
                         <label class="col-md-2 control-lable" for="age">taxNumber</label>
                         <div class="col-md-7">
-                            <input type="taxNumber" ng-model="ctrl.employee.taxNumber"
-                                   id="age" class="form-control input-sm"
+                            <input type="number" ng-model="ctrl.employee.taxNumber"
+                                   id="taxNumber" class="form-control input-sm"
                                    placeholder="Enter your taxNumber."
-                                   required ng-pattern="ctrl.onlyIntegers"/>
+                                   required ng-pattern="ctrl.onlyNumbers"/>
                         </div>
                     </div>
                 </div>
 	<#--TODO add dropBox for departments-->
-	                <div class="row">
-	                    <div class="form-group col-md-12">
-	                        <label class="col-md-2 control-lable" for="department">gender</label>
-	                        <div class="col-md-7">
-	                            <input type="text" ng-model="ctrl.employee.department" id="department"
-									   class="form-control input-sm" placeholder="Enter your department. From 1-5"
-									   required ng-pattern="ctrl.onlyNumbers"/>
-	                        </div>
-	                    </div>
-	                </div>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label class="col-md-2 control-lable" for="department">department</label>
+                            <div class="col-md-7">
+                                <input type="text" ng-model="ctrl.employee.department"
+                                       d="department"
+                                       class="username form-control input-sm"
+                                       placeholder="Enter department name. From 1- 5"/>
+                            </div>
+                        </div>
+                    </div>
 
 	                <div class="row">
 	                    <div class="form-actions floatRight">
 	                        <input type="submit"  value="{{!ctrl.employee.id ? 'Add' : 'Update'}}"
-								   class="btn btn-primary btn-sm" ng-disabled="myForm.$invalid || myForm.$pristine">
+								   class="btn btn-primary btn-sm" ng-disabled="myForm.$pristine">
 	                        <button type="button" ng-click="ctrl.reset()" class="btn btn-warning btn-sm"
 									ng-disabled="myForm.$pristine">Reset Form</button>
 	                    </div>
