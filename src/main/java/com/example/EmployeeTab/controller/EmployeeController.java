@@ -49,7 +49,7 @@ public class EmployeeController {
 
         if (employeeService.isEmployeeExist(employee)) {
             logger.error("Unable to create. An Employee with taxNumber {} already exist", employee.getTaxNumber());
-            return new ResponseEntity(new CustomErrorType("Unable to create. A User with name " +
+            return new ResponseEntity(new CustomErrorType("Unable to create. An employee with taxNumber " +
                     employee.getTaxNumber() + " already exist."), HttpStatus.CONFLICT);
         }
         employeeService.save(employee);
@@ -60,7 +60,6 @@ public class EmployeeController {
         return new ResponseEntity<String>(headers, HttpStatus.CREATED);
     }
 
-    ///employee/{e_id}/department/{d_id} - update(0 will assign new department to employee.
     @RequestMapping(value = "/employee/{id}", method = RequestMethod.PUT)
     public ResponseEntity<?> updateEmployee(@PathVariable("id") long id, @RequestBody Employee employee) {
         logger.info("Updating Employee with id {}", id);

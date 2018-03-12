@@ -1,7 +1,8 @@
 package com.example.EmployeeTab.model;
 
 import com.example.EmployeeTab.model.enums.Gender;
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -10,6 +11,7 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "EMPLOYEES")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Employee implements Serializable {
 
     @Id
@@ -32,8 +34,6 @@ public class Employee implements Serializable {
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "department_id")
-    //to prevent recursion when query works till StackOverflow
-    @JsonBackReference
     private Department department;
 
     public Employee() {

@@ -13,9 +13,3 @@ INSERT into EMPLOYEES(first_name, last_name, birthday, gender, tax_number, depar
 INSERT into EMPLOYEES(first_name, last_name, birthday, gender, tax_number, department_id ) VALUES ('Gendelf', 'The White', now(), 'FEMALE', 1239956789, 4);
 
 INSERT into EMPLOYEES(first_name, last_name, birthday, gender, tax_number, department_id ) VALUES ('Marge', 'Simpson', now(), 'FEMALE', 1225456789, 5);
-
-INSERT into EMPLOYEES(first_name, last_name, birthday, gender, tax_number, department_id ) VALUES ('Bart', 'Simpson', now(), 'FEMALE', 1237856789, 1);
-
-INSERT into EMPLOYEES(first_name, last_name, birthday, gender, tax_number, department_id ) VALUES ('Lisa', 'Simpson', now(), 'FEMALE', 123452489, 2);
-
-INSERT into EMPLOYEES(first_name, last_name, birthday, gender, tax_number, department_id ) VALUES ('Kira', 'Ivanova', now(), 'FEMALE', 123456789, 3);
