@@ -46,11 +46,14 @@
 <#--TODO add drop down box add patern-->
                     <div class="row">
                         <div class="form-group col-md-12">
-                            <label class="col-md-2 control-lable" for="age">gender</label>
+                            <label class="col-md-2 control-lable" for="gender">gender</label>
                             <div class="col-md-7">
-                                <input type="text" ng-model="ctrl.employee.gender"
+                                <select type="text" ng-model="ctrl.employee.gender"
                                        id="gender" class="form-control input-sm"
-                                       placeholder="Enter your gender. FEMALE or MALE"/>
+										ng-options="x in gender">
+                                    <option>FEMALE</option>
+                                    <option>MALE</option>
+								</select>
                             </div>
                         </div>
                     </div>
@@ -128,3 +131,10 @@
 		</div>
     </div>
 </div>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope) {
+        $scope.names = ["Emil", "Tobias", "Linus"];
+    });
+</script>

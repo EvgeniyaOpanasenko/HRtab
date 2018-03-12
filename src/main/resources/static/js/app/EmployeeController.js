@@ -53,7 +53,6 @@ angular.module('crudApp').controller('EmployeeController',
                 );
         }
 
-
         function updateEmployee(employee, id){
             console.log('About to update employee');
             EmployeeService.updateEmployee(employee, id)
@@ -73,7 +72,6 @@ angular.module('crudApp').controller('EmployeeController',
                 );
         }
 
-
         function removeEmployee(id){
             console.log('About to remove Employee with id '+id);
             EmployeeService.removeEmployee(id)
@@ -86,7 +84,6 @@ angular.module('crudApp').controller('EmployeeController',
                     }
                 );
         }
-
 
         function getAllEmployees(){
             return EmployeeService.getAllEmployees();
