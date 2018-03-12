@@ -1,4 +1,11 @@
 # HRtab
+How to start:
+clone project=> 
+mvn clean install=>
+start application
+data.sql contains few employees
+or you can use postman to test some other endpoints.
+
 RESTful web service
 The web application must be implemented using following technology stack:
 1. Java 7 or 8
