@@ -121,7 +121,7 @@
 		                <td>{{u.birthday}}</td>
 		                <td>{{u.gender}}</td>
 		                <td>{{u.taxNumber}}</td>
-		                <td>{{u.department}}</td>
+		                <td>{{u.department.name}}</td>
 		                <td><button type="button" ng-click="ctrl.editEmployee(u.id)" class="btn btn-success custom-width">Edit</button></td>
 		                <td><button type="button" ng-click="ctrl.removeEmployee(u.id)" class="btn btn-danger custom-width">Remove</button></td>
 		            </tr>
