@@ -1,7 +1,6 @@
 package com.example.EmployeeTab.controller;
 
 import com.example.EmployeeTab.model.Department;
-import com.example.EmployeeTab.model.Employee;
 import com.example.EmployeeTab.service.DepartmentService;
 import com.example.EmployeeTab.utils.CustomErrorType;
 import org.slf4j.Logger;

@@ -1,0 +1,8 @@
+logging:
+  level:
+    org.springframework.web: INFO
+    com.mkyong: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  file: /home/dev01/Рабочий стол/task/HRtab/src/main/resources/spring_app_log_file.log
